@@ -1,7 +1,7 @@
 # Covid19_Death-Vaccination_Analysis
 This project show insights on Covid's impact on the world
 
-🌍 COVID-19 Pandemic: Global Data Analysis with SQL & Tableau
+🌍 COVID-19 Pandemic: Global Data Analysis with SQL
 
 By An Nguyen,
 

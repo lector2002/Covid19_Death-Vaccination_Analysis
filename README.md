@@ -59,22 +59,26 @@ Columns: 37
 Includes daily vaccination data by country.
 
 🔎 Data Selection Preview
+
+```
 SELECT location, date, total_cases, new_cases, total_deaths, population
 FROM CovidDeaths
 WHERE continent IS NOT NULL 
   AND total_deaths IS NOT NULL
 ORDER BY 1, 2;
-
+```
 
 This query filters only valid country-level data for focused analysis.
 
 🇳🇬 Total Cases vs Total Deaths in Nigeria
+```
 SELECT location, date, total_cases, total_deaths, 
        (total_deaths / total_cases) * 100 AS DeathsPercentage
 FROM CovidDeaths
 WHERE location LIKE '%Nigeria'
   AND continent IS NOT NULL
 ORDER BY 1, 2;
+```
 
 ✅ Summary
 
@@ -89,11 +93,12 @@ This represents an approximate death rate of 1.25%.
 Nigeria’s fatality rate remained below the global average of ~2%, possibly due to demographics such as a younger population and varying virus strain severity.
 
 👥 Total Cases vs Population
+```
 SELECT location, date, population, total_cases, 
        (total_cases / population) * 100 AS PercentPopulationInfected
 FROM CovidDeaths
 ORDER BY 1, 2;
-
+```
 ✅ Key Findings
 
 Countries like Andorra reached infection rates above 17%.
@@ -105,6 +110,7 @@ Nigeria showed only 0.08% population infection by April 2021.
 This suggests either effective containment or limited testing and under-reporting in some regions.
 
 🌎 Countries With Highest Infection Rate
+```
 SELECT location, population, 
        MAX(total_cases) AS HighestInfectionCount, 
        MAX((total_cases / population)) * 100 AS PercentPopulationInfected
@@ -112,31 +118,34 @@ FROM CovidDeaths
 WHERE continent IS NOT NULL
 GROUP BY location, population
 ORDER BY PercentPopulationInfected DESC;
-
+```
 ✅ Observation
 
 Smaller countries experienced the highest infection rates, with Andorra leading globally.
 
 ☠️ Countries With Highest Death Count
+```
 SELECT location, 
        MAX(CAST(total_deaths AS INT)) AS TotalDeathsCount
 FROM CovidDeaths
 WHERE continent IS NOT NULL
 GROUP BY location
 ORDER BY TotalDeathsCount DESC;
+```
 
 ✅ Result
 
 The United States recorded the highest total number of COVID-19 deaths globally.
 
 🌍 Breakdown by Continent
+```
 SELECT continent, 
        MAX(CAST(total_deaths AS INT)) AS TotalDeathCount
 FROM CovidDeaths
 WHERE continent IS NOT NULL
 GROUP BY continent
 ORDER BY TotalDeathCount DESC;
-
+```
 ✅ Summary
 
 North America had the highest number of deaths
@@ -144,12 +153,13 @@ North America had the highest number of deaths
 Followed by South America
 
 🌐 Global COVID-19 Summary
+```
 SELECT SUM(CAST(new_cases AS INT)) AS Total_cases, 
        SUM(CAST(new_deaths AS INT)) AS Total_Deaths, 
        SUM(CAST(new_deaths AS INT)) / SUM(new_cases) * 100 AS DeathsPercentage
 FROM CovidDeaths
 WHERE continent IS NOT NULL;
-
+```
 ✅ Global Snapshot
 
 Total Cases: ~150 million
@@ -159,6 +169,7 @@ Total Deaths: ~3.18 million
 Global Death Rate: ~2.11%
 
 💉 Population vs Vaccination Analysis
+```
 WITH popvsvac AS (
   SELECT dea.continent, dea.location, dea.date, dea.population,
          vac.new_vaccinations,
@@ -173,24 +184,12 @@ WITH popvsvac AS (
 SELECT *, 
        (RollingPeopleVaccinated / population) * 100 AS PercentVaccinated
 FROM popvsvac;
-
+```
 ✅ Insight
 
 Countries with faster and earlier vaccination rollouts recorded slower infection growth. Developing countries, including Nigeria, trailed behind in vaccine coverage.
 
-📊 Tableau Dashboard
 
-An interactive COVID-19 Global Impact Dashboard was created using Tableau to visualize:
-
-Global case distribution
-
-Mortality by continent
-
-Vaccination progress
-
-Infection percentage by country
-
-(Insert your Tableau Public link here)
 
 ✅ Key Global Statistics
 

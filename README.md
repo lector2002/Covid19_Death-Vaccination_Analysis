@@ -11,52 +11,52 @@ The COVID-19 pandemic was a global health crisis that reshaped lives, economies,
 
 📂 Dataset Overview
 
-This project utilizes datasets provided by the World Health Organization (WHO), containing detailed global COVID-19 statistics. The data focuses on:
-
-Total confirmed cases
-
-Death records
-
-Infection rates
-
-Vaccination rollout
-
-Population-based impact
-
-Regional and continental breakdowns
+  This project utilizes datasets provided by the World Health Organization (WHO), containing detailed global COVID-19 statistics. The data focuses on:
+  
+  Total confirmed cases
+  
+  Death records
+  
+  Infection rates
+  
+  Vaccination rollout
+  
+  Population-based impact
+  
+  Regional and continental breakdowns
 
 ❓ Key Questions Explored
 
-This analysis seeks to answer the following questions:
-
-What percentage of the population has been vaccinated?
-
-How many deaths occurred by continent?
-
-Which continent recorded the highest deaths per population?
-
-Which countries had the highest infection rate compared to population?
-
-What percentage of the population was infected globally?
+  This analysis seeks to answer the following questions:
+  
+  What percentage of the population has been vaccinated?
+  
+  How many deaths occurred by continent?
+  
+  Which continent recorded the highest deaths per population?
+  
+  Which countries had the highest infection rate compared to population?
+  
+  What percentage of the population was infected globally?
 
 What is the relationship between total cases and total deaths in Nigeria?
 
 🗂 Dataset Structure
-✅ CovidDeaths Table
+  ✅ CovidDeaths Table
+  
+  Rows: 81,060
+  
+  Columns: 26
+  
+  Contains information on cases, deaths, location, date, population, and continents.
 
-Rows: 81,060
-
-Columns: 26
-
-Contains information on cases, deaths, location, date, population, and continents.
-
-✅ CovidVaccinations Table
-
-Rows: 85,171
-
-Columns: 37
-
-Includes daily vaccination data by country.
+  ✅ CovidVaccinations Table
+  
+  Rows: 85,171
+  
+  Columns: 37
+  
+  Includes daily vaccination data by country.
 
 🔎 Data Selection Preview
 
@@ -82,15 +82,15 @@ ORDER BY 1, 2;
 
 ✅ Summary
 
-Nigeria recorded its first COVID-19 death on March 23, 2020, with 40 confirmed cases.
-
-By April 30, 2021, Nigeria had 165,110 cases and 2,063 deaths.
-
-This represents an approximate death rate of 1.25%.
+  Nigeria recorded its first COVID-19 death on March 23, 2020, with 40 confirmed cases.
+  
+  By April 30, 2021, Nigeria had 165,110 cases and 2,063 deaths.
+  
+  This represents an approximate death rate of 1.25%.
 
 📌 Insight
 
-Nigeria’s fatality rate remained below the global average of ~2%, possibly due to demographics such as a younger population and varying virus strain severity.
+  Nigeria’s fatality rate remained below the global average of ~2%, possibly due to demographics such as a younger population and varying virus strain severity.
 
 👥 Total Cases vs Population
 ```
@@ -101,13 +101,13 @@ ORDER BY 1, 2;
 ```
 ✅ Key Findings
 
-Countries like Andorra reached infection rates above 17%.
-
-Nigeria showed only 0.08% population infection by April 2021.
+  Countries like Andorra reached infection rates above 17%.
+  
+  Nigeria showed only 0.08% population infection by April 2021.
 
 📌 Interpretation
 
-This suggests either effective containment or limited testing and under-reporting in some regions.
+  This suggests either effective containment or limited testing and under-reporting in some regions.
 
 🌎 Countries With Highest Infection Rate
 ```
@@ -121,7 +121,7 @@ ORDER BY PercentPopulationInfected DESC;
 ```
 ✅ Observation
 
-Smaller countries experienced the highest infection rates, with Andorra leading globally.
+  Smaller countries experienced the highest infection rates, with Andorra leading globally.
 
 ☠️ Countries With Highest Death Count
 ```
@@ -135,7 +135,7 @@ ORDER BY TotalDeathsCount DESC;
 
 ✅ Result
 
-The United States recorded the highest total number of COVID-19 deaths globally.
+  The United States recorded the highest total number of COVID-19 deaths globally.
 
 🌍 Breakdown by Continent
 ```
@@ -148,9 +148,9 @@ ORDER BY TotalDeathCount DESC;
 ```
 ✅ Summary
 
-North America had the highest number of deaths
+  North America had the highest number of deaths
 
-Followed by South America
+  Followed by South America
 
 🌐 Global COVID-19 Summary
 ```
@@ -162,11 +162,11 @@ WHERE continent IS NOT NULL;
 ```
 ✅ Global Snapshot
 
-Total Cases: ~150 million
-
-Total Deaths: ~3.18 million
-
-Global Death Rate: ~2.11%
+  Total Cases: ~150 million
+  
+  Total Deaths: ~3.18 million
+  
+  Global Death Rate: ~2.11%
 
 💉 Population vs Vaccination Analysis
 ```
@@ -187,55 +187,55 @@ FROM popvsvac;
 ```
 ✅ Insight
 
-Countries with faster and earlier vaccination rollouts recorded slower infection growth. Developing countries, including Nigeria, trailed behind in vaccine coverage.
+  Countries with faster and earlier vaccination rollouts recorded slower infection growth. Developing countries, including Nigeria, trailed behind in vaccine coverage.
 
 
 
 ✅ Key Global Statistics
 
-Total Cases: 150,574,977
-
-Total Deaths: 3,180,206
-
-Death Rate: 2.11%
-
-The pandemic affected regions unevenly, with Europe, North America, and South America experiencing the greatest losses.
+  Total Cases: 150,574,977
+  
+  Total Deaths: 3,180,206
+  
+  Death Rate: 2.11%
+  
+  The pandemic affected regions unevenly, with Europe, North America, and South America experiencing the greatest losses.
 
 📈 Most Affected Countries (By Infection Rate)
 
-USA: 19.11%
-
-United Kingdom: 14.93%
-
-India: 8.33%
-
-Nearly 1 in 5 people in some countries were infected.
+  USA: 19.11%
+  
+  United Kingdom: 14.93%
+  
+  India: 8.33%
+  
+  Nearly 1 in 5 people in some countries were infected.
 
 🧠 Recommendations
-✅ ускорить Vaccine Distribution
+  ✅ ускорить Vaccine Distribution
+  
+    Developing nations should prioritize vaccine procurement and equitable rollout with global assistance.
+  
+  ✅ Improve Testing Infrastructure
+  
+    Upgrade testing capacity to reduce underreporting and prepare for early outbreak detection.
+  
+  ✅ Strengthen Public Health Education
+  
+    Improve public trust through clear messaging on vaccines, masking, and prevention.
+  
+  ✅ Build Pandemic Preparedness Systems
+  
+    Stockpile medical resources, strengthen ICUs, and perform outbreak simulations.
+  
+  ✅ Strengthen Global Health Collaboration
+  
+    Promote real-time data sharing and coordinated response through bodies like WHO.
+  
+  ✅ Prioritize Vulnerable Populations
+  
+    Protect the elderly, chronically ill, and immunocompromised through targeted healthcare programs.
 
-Developing nations should prioritize vaccine procurement and equitable rollout with global assistance.
-
-✅ Improve Testing Infrastructure
-
-Upgrade testing capacity to reduce underreporting and prepare for early outbreak detection.
-
-✅ Strengthen Public Health Education
-
-Improve public trust through clear messaging on vaccines, masking, and prevention.
-
-✅ Build Pandemic Preparedness Systems
-
-Stockpile medical resources, strengthen ICUs, and perform outbreak simulations.
-
-✅ Strengthen Global Health Collaboration
-
-Promote real-time data sharing and coordinated response through bodies like WHO.
-
-✅ Prioritize Vulnerable Populations
-
-Protect the elderly, chronically ill, and immunocompromised through targeted healthcare programs.
-
-✅ Invest in Long-Term Healthcare Resilience
-
-Expand funding, workforce training, and scalable emergency response capacity.
+  ✅ Invest in Long-Term Healthcare Resilience
+  
+    Expand funding, workforce training, and scalable emergency response capacity.

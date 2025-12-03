@@ -9,7 +9,7 @@ By An Nguyen,
 
 The COVID-19 pandemic was a global health crisis that reshaped lives, economies, and healthcare systems worldwide. This project explores the global impact of the virus using real-world data and data analytics techniques. By leveraging SQL for data exploration and querying and Tableau for visualization, this analysis uncovers key insights about infections, deaths, and vaccination progress across countries and continents.
 
-📂 Dataset Overview
+#📂 Dataset Overview
 
   This project utilizes datasets provided by the World Health Organization (WHO), containing detailed global COVID-19 statistics. The data focuses on:
   
@@ -25,7 +25,7 @@ The COVID-19 pandemic was a global health crisis that reshaped lives, economies,
   
   Regional and continental breakdowns
 
-❓ Key Questions Explored
+#❓ Key Questions Explored
 
   This analysis seeks to answer the following questions:
   
@@ -41,7 +41,7 @@ The COVID-19 pandemic was a global health crisis that reshaped lives, economies,
 
 What is the relationship between total cases and total deaths in Nigeria?
 
-🗂 Dataset Structure
+#🗂 Dataset Structure
   ✅ CovidDeaths Table
   
   Rows: 81,060
@@ -58,7 +58,7 @@ What is the relationship between total cases and total deaths in Nigeria?
   
   Includes daily vaccination data by country.
 
-🔎 Data Selection Preview
+#🔎 Data Selection Preview
 
 ```
 SELECT location, date, total_cases, new_cases, total_deaths, population
@@ -70,7 +70,7 @@ ORDER BY 1, 2;
 
 This query filters only valid country-level data for focused analysis.
 
-🇳🇬 Total Cases vs Total Deaths in Nigeria
+#🇳🇬 Total Cases vs Total Deaths in Nigeria
 ```
 SELECT location, date, total_cases, total_deaths, 
        (total_deaths / total_cases) * 100 AS DeathsPercentage
@@ -92,7 +92,7 @@ ORDER BY 1, 2;
 
   Nigeria’s fatality rate remained below the global average of ~2%, possibly due to demographics such as a younger population and varying virus strain severity.
 
-👥 Total Cases vs Population
+#👥 Total Cases vs Population
 ```
 SELECT location, date, population, total_cases, 
        (total_cases / population) * 100 AS PercentPopulationInfected
@@ -109,7 +109,7 @@ ORDER BY 1, 2;
 
   This suggests either effective containment or limited testing and under-reporting in some regions.
 
-🌎 Countries With Highest Infection Rate
+#🌎 Countries With Highest Infection Rate
 ```
 SELECT location, population, 
        MAX(total_cases) AS HighestInfectionCount, 
@@ -123,7 +123,7 @@ ORDER BY PercentPopulationInfected DESC;
 
   Smaller countries experienced the highest infection rates, with Andorra leading globally.
 
-☠️ Countries With Highest Death Count
+#☠️ Countries With Highest Death Count
 ```
 SELECT location, 
        MAX(CAST(total_deaths AS INT)) AS TotalDeathsCount
@@ -137,7 +137,7 @@ ORDER BY TotalDeathsCount DESC;
 
   The United States recorded the highest total number of COVID-19 deaths globally.
 
-🌍 Breakdown by Continent
+#🌍 Breakdown by Continent
 ```
 SELECT continent, 
        MAX(CAST(total_deaths AS INT)) AS TotalDeathCount
@@ -152,7 +152,7 @@ ORDER BY TotalDeathCount DESC;
 
   Followed by South America
 
-🌐 Global COVID-19 Summary
+#🌐 Global COVID-19 Summary
 ```
 SELECT SUM(CAST(new_cases AS INT)) AS Total_cases, 
        SUM(CAST(new_deaths AS INT)) AS Total_Deaths, 
@@ -168,7 +168,7 @@ WHERE continent IS NOT NULL;
   
   Global Death Rate: ~2.11%
 
-💉 Population vs Vaccination Analysis
+#💉 Population vs Vaccination Analysis
 ```
 WITH popvsvac AS (
   SELECT dea.continent, dea.location, dea.date, dea.population,
@@ -211,7 +211,7 @@ FROM popvsvac;
   
   Nearly 1 in 5 people in some countries were infected.
 
-🧠 Recommendations
+#🧠 Recommendations
   ✅ ускорить Vaccine Distribution
   
     Developing nations should prioritize vaccine procurement and equitable rollout with global assistance.

@@ -212,7 +212,7 @@ FROM popvsvac;
   Nearly 1 in 5 people in some countries were infected.
 
 # 🧠 Recommendations
-  ✅ ускорить Vaccine Distribution
+  ✅ Vaccine Distribution
   
     Developing nations should prioritize vaccine procurement and equitable rollout with global assistance.
   
